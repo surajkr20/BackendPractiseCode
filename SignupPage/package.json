@@ -1,0 +1,22 @@
+{
+  "name": "signuppage",
+  "version": "1.0.0",
+  "description": "a backend of basic signup page (minor project)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "keywords": [
+    "node.js",
+    "javascript",
+    "express"
+  ],
+  "author": "suraj kumar",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
