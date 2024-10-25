@@ -29,6 +29,13 @@ app.get('/encrypt',(req, res)=>{
     })
 })
 
+// decryption with bcrypt
+app.get('/decrypt',(req, res)=>{
+    bcrypt.compare('Suraj7860','$2b$10$UcGw3ZkWQ997yj/XmtPJv.w7Ypkuxzbf5Et6LWIewLo273tbO8tXS',(err, result)=>{
+        console.log(result);
+    })
+})
+
 app.listen(3000, () => {
     console.log('Server listening at port 3000');
 });
