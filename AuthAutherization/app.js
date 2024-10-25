@@ -16,6 +16,19 @@ app.get('/read', (req, res) => { // for read
     res.send('Cookies read from the request: ' + JSON.stringify(req.cookies));
 });
 
+// using bcrypt for encryption and dcription
+
+const bcrypt = require('bcrypt');
+
+app.get('/encrypt',(req, res)=>{
+    bcrypt.genSalt(10, (err, salt)=>{
+        console.log(salt) // a random number(salt)
+        bcrypt.hash('Suraj7860',salt,(err,hash)=>{
+            console.log(hash);
+        })
+    })
+})
+
 app.listen(3000, () => {
     console.log('Server listening at port 3000');
 });
