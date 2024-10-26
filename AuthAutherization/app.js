@@ -36,6 +36,22 @@ app.get('/decrypt',(req, res)=>{
     })
 })
 
+// learning jsonwebtoken
+const jwt = require('jsonwebtoken');
+
+app.get('/jwt',(req, res)=>{
+    let token = jwt.sign({email : 'suraj71308kumar@gmail.com'}, 'secret')
+    res.cookie('token',token);
+    console.log('done')
+})
+
+app.get('/readtoken',(req, res)=>{
+    // console.log(req.cookies.token)
+    // res.send(req.cookies.token)
+    let data = jwt.verify(req.cookies.token, 'secret')
+    console.log(data)
+})
+
 app.listen(3000, () => {
     console.log('Server listening at port 3000');
 });
